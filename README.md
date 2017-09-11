@@ -1,6 +1,7 @@
 Installation:
 
 mkdir project
+
 cd project
 
 sudo apt-get install pip
