@@ -11,6 +11,9 @@ source .env/bin/activate
 
 pip install -r requirements.txt
 
+git clone https://github.com/SERHIISV/halturka.git
+
+cd scraper
 
 Start scraper:
 scrapy crawl [name]
