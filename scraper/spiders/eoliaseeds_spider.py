@@ -18,7 +18,7 @@ class EoliaseedsSpider(scrapy.Spider):
                 item = Product()
                 url = tr.xpath('td[@class="title"]/p/a/@href').extract()[0].strip()
                 item['URL'] = response.urljoin(url)
-                item['Name'] = tr.xpath('td[@class="title"]/p/a/text()').extract()[0].strip()
+                item['Name'] = ''.join(tr.xpath('td[@class="title"]/p/a//text()').extract()).strip()
                 price = tr.xpath('td[@class="price"]/p[2]/text()').extract()[0].strip()
                 item['Price'] = ''.join(el for el in price if el.isdigit())
                 item['Brand'] = url.split('/')[2].replace('-', ' ')
